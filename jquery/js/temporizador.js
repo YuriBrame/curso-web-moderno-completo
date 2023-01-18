@@ -1,5 +1,5 @@
 (function($) {
-  $.fn.temporizador = function(opcoes) {
+  $.fn.temporizador = function (opcoes) {
     const opcoesFinais = $.extend({
       mensagem: 'Em breve!',
       horario: '23:59:59'
@@ -17,9 +17,11 @@
     const mensagem = $('<div class="mensagem">').html(opcoesFinais.mensagem)
 
     $(this).addClass('temporizador')
-    $(this).append(horaDezena, horaUnidade, separadorHora, minutoDezena,minutoUnidade, separadorMinuto, segundoDezena, segundoUnidade, mensagem)
+    $(this).append(horaDezena, horaUnidade, separadorHora,
+      minutoDezena, minutoUnidade, separadorMinuto,
+      segundoDezena, segundoUnidade, mensagem)
 
-    const regex = new Regexp(/(\d\d):(\d\d):(\d\d)/)
+    const regex = new RegExp(/(\d\d):(\d\d):(\d\d)/)
     const horarioAlvo = regex.exec(opcoesFinais.horario)
     //console.log(horarioAlvo)
 
@@ -48,4 +50,4 @@
 
     return this
   }
-})(JQuery)
+})(jQuery)
